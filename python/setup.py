@@ -33,11 +33,13 @@ def config_cython():
                         "../src/quartz/",
                         "/usr/local/include/",
                         os.path.join(user_home_path, "usr_local/include"),
+                        *(os.getenv("CPATH","").split(":")),
                     ],
                     libraries=["quartz_runtime"],
                     library_dirs=[
                         "/usr/local/lib/",
                         os.path.join(user_home_path, "usr_local/lib"),
+                        *(os.getenv("LD_LIBRARY_PATH", "").split(":")),
                     ],
                     extra_compile_args=["-std=c++17"],
                     extra_link_args=[],

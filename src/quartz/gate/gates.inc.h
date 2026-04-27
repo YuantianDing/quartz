@@ -1,6 +1,7 @@
 // A mapping from GateType to Gate subclasses.
 // Note that we don't have GeneralControlledGate here because we may need
 // to deal with it separately.
+#include "gate/gate_utils.h"
 PER_GATE(h, HGate)
 PER_GATE(x, XGate)
 PER_GATE(y, YGate)
@@ -38,3 +39,8 @@ PER_GATE(ry3, RY3Gate)
 PER_GATE(rxx1, RXX1Gate)
 PER_GATE(rxx3, RXX3Gate)
 PER_GATE(sx, SXGate)
+PER_GATE(cy, CYGate)
+PER_GATE(thalf, THalf)
+PER_GATE(thalf_dg, THalfDG)
+PER_GATE(phase_frac_pi_3, PhaseFracPI3)
+PER_GATE(phase_frac_pi_3_dg, PhaseFracPI3DG)

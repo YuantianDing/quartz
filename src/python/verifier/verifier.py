@@ -351,6 +351,7 @@ def search_phase_factor_to_check_equivalence(
         new_phase_factor_for_fingerprint = current_phase_factor_for_fingerprint
         new_phase_factor_symbolic = current_phase_factor_symbolic
         if coeff != 0:
+            print(repr(new_phase_factor_for_fingerprint),repr(parameters_for_fingerprint[current_param_id]) )
             new_phase_factor_for_fingerprint = (
                 current_phase_factor_for_fingerprint
                 + coeff * parameters_for_fingerprint[current_param_id]

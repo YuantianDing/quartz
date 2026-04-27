@@ -18,5 +18,22 @@ class CZGate : public Gate {
   int get_num_control_qubits() const override { return 1; }
   Matrix<4> mat;
 };
+class CYGate : public Gate {
+ public:
+  CYGate()
+      : Gate(GateType::cy, 2 /*num_qubits*/, 0 /*num_parameters*/),
+        mat(
+            {{1, 0, 0, 0},
+            {0, 0, 0, -1.0i},
+             {0, 0, 1, 0},
+             {0, 1.0i, 0, 0}}
+        ) {}
+  MatrixBase *get_matrix() override { return &mat; }
+  bool is_symmetric() const override { return true; }
+  bool is_sparse() const override { return true; }
+  bool is_diagonal() const override { return true; }
+  int get_num_control_qubits() const override { return 1; }
+  Matrix<4> mat;
+};
 
 }  // namespace quartz
